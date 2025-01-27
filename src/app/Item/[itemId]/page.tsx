@@ -19,9 +19,9 @@ interface ItemData {
 }
 
 interface ItemPageProps {
-    params: {
+    params: Promise<{
         itemId: string;
-    };
+    }>;
 }
 
 const shortcuts = {
@@ -40,9 +40,18 @@ const Loader = () => {
 };
 
 const ItemPage: React.FC<ItemPageProps> = ({ params }) => {
-    const { itemId } = params;
+    const [itemId, setItemId] = useState<string | null>(null);
     const [itemData, setItemData] = useState<ItemData | null>(null);
     const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchParams = async () => {
+            const resolvedParams = await params;
+            setItemId(resolvedParams.itemId);
+        };
+
+        fetchParams();
+    }, [params]);
 
     const handleGetItem = async (itemId: string) => {
         try {
@@ -63,7 +72,9 @@ const ItemPage: React.FC<ItemPageProps> = ({ params }) => {
     };
 
     useEffect(() => {
-        handleGetItem(itemId);
+        if (itemId) {
+            handleGetItem(itemId);
+        }
     }, [itemId]);
 
     return (
