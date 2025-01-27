@@ -32,6 +32,7 @@ export default function SelectPageFU({
         {/* Previous page button */}
         <PaginationItem>
           <PaginationPrevious
+              size="default"
             className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
             href={currentPage === 1 ? undefined : `#/page/${currentPage - 1}`}
             aria-disabled={currentPage === 1 ? true : undefined}
@@ -49,7 +50,8 @@ export default function SelectPageFU({
         {/* Page number links */}
         {pages.map((page) => (
           <PaginationItem key={page}>
-            <PaginationLink href={`#/page/${page}`} isActive={page === currentPage}>
+            <PaginationLink               size="default"
+                                          href={`#/page/${page}`} isActive={page === currentPage}>
               {page}
             </PaginationLink>
           </PaginationItem>
@@ -64,8 +66,9 @@ export default function SelectPageFU({
 
         {/* Next page button */}
         <PaginationItem>
-          <PaginationNext
-            className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
+          <PaginationNext               size="default"
+
+                                        className="aria-disabled:pointer-events-none aria-disabled:opacity-50"
             href={currentPage === totalPages ? undefined : `#/page/${currentPage + 1}`}
             aria-disabled={currentPage === totalPages ? true : undefined}
             role={currentPage === totalPages ? "link" : undefined}
