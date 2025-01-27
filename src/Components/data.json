@@ -1,0 +1,31 @@
+[
+  {
+    "id": "succes",
+    "label": "regular price buy",
+    "value": 1983,
+    "color": "hsl(269, 70%, 50%)"
+  },
+  {
+    "id": "overprice",
+    "label": "High price transactions",
+    "value": 135,
+    "color": "hsl(219, 70%, 50%)"
+  },  {
+  "id": "lowprice",
+  "label": "Low price transaction",
+  "value": 557,
+  "color": "hsl(195, 70%, 50%)"
+},  {
+  "id": "noSucces",
+  "label": "no succes transaction",
+  "value": 82,
+  "color": "hsl(191, 70%, 50%)"
+},
+  {
+    "id": "noData",
+    "label": "No Data About Purchase",
+    "value": 21,
+    "color": "hsl(336, 70%, 50%)"
+  }
+]
+
