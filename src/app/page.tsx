@@ -34,7 +34,7 @@ export default function Home() {
                     className="mt-10 pt-6 border-t border-white/10 flex justify-center space-x-6"
                     style={{ width: "100%", height: "400px" }}
                 >
-                    <Statistic />
+                    <Statistic/>
                 </div>
                 <div className="grid md:grid-cols-1 lg:grid-cols-3">
 <AvaiblePlans/>

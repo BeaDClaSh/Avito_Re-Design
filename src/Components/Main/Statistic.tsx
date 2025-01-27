@@ -1,26 +1,23 @@
-// install (please try to align the version of installed @nivo packages)
-// yarn add @nivo/pie
 "use client"
-import {ResponsivePieCanvas} from '@nivo/pie'
-import statisticdata from "@/Components/Main/data.json";
+import {ResponsivePie} from '@nivo/pie';
+import React from "react";
+import statisticdata from "@/Components/Main/data.json"; // Данные теперь импортируются внутри компонента
 
-// make sure parent container have a defined height when using
-// responsive component, otherwise height will be 0 and
-// no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
+// Определяем интерфейсы
 interface PieData {
-   id: string,
-    label: string,
-    value: number,
-    color: string,
+    id: string;
+    label: string;
+    value: number;
+    color: string;
 }
-interface StatisticProps{
-    data: PieData[],
+
+interface StatisticProps {
+    // Пропсы больше не требуются
 }
-const Statistic:React.FC<StatisticProps> = () => (
-    <ResponsivePieCanvas
-        data={statisticdata}
+
+const Statistic: React.FC<StatisticProps> = () => (
+    <ResponsivePie
+        data={statisticdata}  // Данные теперь берутся из импорта
         margin={{ top: 40, right: 200, bottom: 40, left: 80 }}
         innerRadius={0.5}
         padAngle={0.7}
@@ -30,11 +27,8 @@ const Statistic:React.FC<StatisticProps> = () => (
         borderColor={{
             from: 'color',
             modifiers: [
-                [
-                    'darker',
-                    0.6
-                ]
-            ]
+                ['darker', 0.6],
+            ],
         }}
         arcLinkLabelsSkipAngle={10}
         arcLinkLabelsTextColor="#333333"
@@ -50,7 +44,7 @@ const Statistic:React.FC<StatisticProps> = () => (
                 color: 'rgba(255, 255, 255, 0.3)',
                 size: 4,
                 padding: 1,
-                stagger: true
+                stagger: true,
             },
             {
                 id: 'lines',
@@ -59,58 +53,18 @@ const Statistic:React.FC<StatisticProps> = () => (
                 color: 'rgba(255, 255, 255, 0.3)',
                 rotation: -45,
                 lineWidth: 6,
-                spacing: 10
-            }
+                spacing: 10,
+            },
         ]}
         fill={[
-            {
-                match: {
-                    id: 'ruby'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'c'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'go'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'python'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'scala'
-                },
-                id: 'lines'
-            },
-            {
-                match: {
-                    id: 'lisp'
-                },
-                id: 'lines'
-            },
-            {
-                match: {
-                    id: 'elixir'
-                },
-                id: 'lines'
-            },
-            {
-                match: {
-                    id: 'javascript'
-                },
-                id: 'lines'
-            }
+            { match: { id: 'ruby' }, id: 'dots' },
+            { match: { id: 'c' }, id: 'dots' },
+            { match: { id: 'go' }, id: 'dots' },
+            { match: { id: 'python' }, id: 'dots' },
+            { match: { id: 'scala' }, id: 'lines' },
+            { match: { id: 'lisp' }, id: 'lines' },
+            { match: { id: 'elixir' }, id: 'lines' },
+            { match: { id: 'javascript' }, id: 'lines' },
         ]}
         legends={[
             {
@@ -126,9 +80,10 @@ const Statistic:React.FC<StatisticProps> = () => (
                 itemDirection: 'left-to-right',
                 itemOpacity: 1,
                 symbolSize: 14,
-                symbolShape: 'circle'
-            }
+                symbolShape: 'circle',
+            },
         ]}
     />
-)
-export default Statistic
+);
+
+export default Statistic;
