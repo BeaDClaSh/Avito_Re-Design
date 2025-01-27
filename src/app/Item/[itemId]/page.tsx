@@ -1,6 +1,7 @@
 "use client";
 
 import React, {useEffect, useState} from "react";
+import {usePathname} from "next/navigation";
 import AnimatedBackground from "@/Components/AnimatedBackground";
 import Menu from "@/Components/Menu";
 import BackTable from "@/Components/Item/BackTable/comp-446";
@@ -18,12 +19,6 @@ interface ItemData {
     status: "new" | "old" | "good";
 }
 
-interface ItemPageProps {
-    params: Promise<{
-        itemId: string;
-    }>;
-}
-
 const shortcuts = {
     API_URL: "https://example.com/api",
     GetItems: "/items/get/",
@@ -39,19 +34,10 @@ const Loader = () => {
     );
 };
 
-const ItemPage: React.FC<ItemPageProps> = ({ params }) => {
-    const [itemId, setItemId] = useState<string | null>(null);
+const ItemPage: React.FC = () => {
+    const itemId = usePathname();
     const [itemData, setItemData] = useState<ItemData | null>(null);
     const [error, setError] = useState<string | null>(null);
-
-    useEffect(() => {
-        const fetchParams = async () => {
-            const resolvedParams = await params;
-            setItemId(resolvedParams.itemId);
-        };
-
-        fetchParams();
-    }, [params]);
 
     const handleGetItem = async (itemId: string) => {
         try {
@@ -60,7 +46,7 @@ const ItemPage: React.FC<ItemPageProps> = ({ params }) => {
             });
 
             if (!response.ok) {
-                throw new Error(`HTTP Error: ${response.status}`);
+                new Error(`HTTP Error: ${response.status}`);
             }
 
             const data: ItemData = await response.json();
