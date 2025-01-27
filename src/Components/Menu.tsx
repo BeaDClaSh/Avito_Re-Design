@@ -2,7 +2,7 @@
 
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Sidebar from "@/Components/Sidebar";
+import Sidebar from "@/Components/Main/Sidebar";
 import Link from "next/link";
 
 const shortcuts = {

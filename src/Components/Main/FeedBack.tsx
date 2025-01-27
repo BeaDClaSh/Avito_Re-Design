@@ -1,7 +1,7 @@
 "use client"
 import React, {ChangeEvent, useEffect, useState} from "react";
 import {Mail, MessageSquare, Send, Share2, User} from "lucide-react";
-import Comments from "./Comments.jsx";
+import Comments from "../Comments.jsx";
 import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";

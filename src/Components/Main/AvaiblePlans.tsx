@@ -1,8 +1,8 @@
 "use client"
-import Free from "./jsonData/plans/Free.json"
-import PayHowMuchYouWanna from "./jsonData/plans/PayHowMuchUsYouWanna.json"
-import Platinum from "./jsonData/plans/Platinum.json"
-import Plans from "@/Components/Plan";
+import Free from "../jsonData/plans/Free.json"
+import PayHowMuchYouWanna from "../jsonData/plans/PayHowMuchUsYouWanna.json"
+import Platinum from "../jsonData/plans/Platinum.json"
+import Plans from "@/Components/Main/Plan";
 
 const AvaiblePlans =()=>{
     return(

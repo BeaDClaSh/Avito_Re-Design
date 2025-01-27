@@ -2,7 +2,7 @@
 // yarn add @nivo/pie
 "use client"
 import {ResponsivePieCanvas} from '@nivo/pie'
-import statisticdata from "@/Components/data.json";
+import statisticdata from "@/Components/Main/data.json";
 
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and

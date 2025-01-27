@@ -1,12 +1,12 @@
 import Menu from "@/Components/Menu";
 import Link from "next/link";
-import SplitText from "@/Components/Features";
+import SplitText from "@/Components/SplitText";
 import AnimatedBackground from "../Components/AnimatedBackground";
-import ContactPage from "@/Components/FeedBack";
-import TitleH1Home from "@/Components/TitleH1Home";
-import Statistic from "@/Components/Statistic";
+import ContactPage from "@/Components/Main/FeedBack";
+import TitleH1Home from "@/Components/Main/TitleH1Home";
+import Statistic from "@/Components/Main/Statistic";
 import React from "react";
-import AvaiblePlans from "@/Components/AvaiblePlans";
+import AvaiblePlans from "@/Components/Main/AvaiblePlans";
 import CopyRights from "@/Components/CopyRights";
 
 export default function Home() {
