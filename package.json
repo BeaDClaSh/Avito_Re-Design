@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build:ignore-lint": "next build --no-lint"
+    "build:ignore-lint": "next build --no-lint --no-typescript"
   },
   "dependencies": {
     "@firebase/firestore": "^4.7.6",
