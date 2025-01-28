@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Sidebar from "@/Components/Main/Sidebar";
 import Link from "next/link";
+import Image from "next/image";
 
 const shortcuts = {
     API_URL: "", // Укажите ваш API URL
@@ -101,11 +102,7 @@ const Menu = () => {
                 type="button"
                 className="p-2 z-50 ml-4 sm:mr-2"
             >
-                <img
-                    src="https://i.ibb.co/QQQTgJS/astral-logo.jpg"
-                    alt="Menu"
-                    className="w-8 h-8"
-                />
+                <Image height={48} width={48} src={"https://i.ibb.co/QQQTgJS/astral-logo.jpg"} alt={"Menu"}/>
             </button>
 
             {/* Ошибка */}
