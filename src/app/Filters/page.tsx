@@ -1,3 +1,4 @@
+"use client"
 import {Label} from "@/Components/FiltersPage/ui/label";
 import MultipleSelector, {Option} from "@/Components/FiltersPage/ui/multiselect";
 import {useId} from "react";
