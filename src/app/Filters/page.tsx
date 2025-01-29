@@ -6,6 +6,7 @@ import Menu from "@/Components/Menu"
 
 const shortcuts = {
     API_URL: "",
+    FilterSelected:"filter_selected",
 }
 
 const ChooseWhatYouLookingFor: Option[] = [
@@ -77,8 +78,14 @@ const ChooseWhatYouLookingFor: Option[] = [
     },
 ];
 
-export default function Component() {
+export default function Filter() {
     const id = useId();
+
+    const HandleSubmit = async () => {
+        await fetch(shortcuts.API_URL+shortcuts.FilterSelected, {body:id})
+    }
+
+
     return (
         <>
             <Menu/>
@@ -102,7 +109,7 @@ export default function Component() {
                 emptyIndicator={<p className="text-center text-sm">No results found</p>}
             />
         </div>
-                    <div></div>
+                    <div><button type="submit" onSubmit={HandleSubmit}></button></div>
                 </form>
 
         </div>

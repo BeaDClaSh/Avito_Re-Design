@@ -3,19 +3,8 @@ import {ResponsivePie} from '@nivo/pie';
 import React from "react";
 import statisticdata from "@/Components/Main/data.json"; // Данные теперь импортируются внутри компонента
 
-// Определяем интерфейсы
-interface PieData {
-    id: string;
-    label: string;
-    value: number;
-    color: string;
-}
 
-interface StatisticProps {
-    // Пропсы больше не требуются
-}
-
-const Statistic: React.FC<StatisticProps> = () => (
+const Statistic: React.FC = () => (
     <ResponsivePie
         data={statisticdata}  // Данные теперь берутся из импорта
         margin={{ top: 40, right: 200, bottom: 40, left: 80 }}

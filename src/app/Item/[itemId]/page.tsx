@@ -7,6 +7,7 @@ import Menu from "@/Components/Menu";
 import BackTable from "@/Components/Item/BackTable/comp-446";
 import SplitText from "@/Components/SplitText";
 import ItemDetails from "@/Components/Item/Item Details/ItemDetails";
+import Loader from "@/Components/Loader";
 
 interface ItemData {
     id: string;
@@ -24,15 +25,6 @@ const shortcuts = {
     GetItems: "/items/get/",
 };
 
-const Loader = () => {
-    return (
-        <div className="flex flex-row gap-2">
-            <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce"></div>
-            <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:-.3s]"></div>
-            <div className="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:-.5s]"></div>
-        </div>
-    );
-};
 
 const ItemPage: React.FC = () => {
     const itemId = usePathname();

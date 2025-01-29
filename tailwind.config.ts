@@ -58,6 +58,11 @@ const config: Config = {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 			},
 		},
+		safelist: [
+			{
+				pattern: /^(grid|sm|md|lg|xl|2xl|gap|pt|pb|pl|pr|max-w|text|bg|border)/, // Все используемые префиксы
+			}
+		]
 	},
 	plugins: [tailwindAnimate],
 };

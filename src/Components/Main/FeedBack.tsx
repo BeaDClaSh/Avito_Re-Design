@@ -39,7 +39,7 @@ const ContactPage: React.FC = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        Swal.fire({
+        await Swal.fire({
             title: "Sending Message...",
             html: "Please wait while we send your message",
             allowOutsideClick: false,
@@ -51,13 +51,11 @@ const ContactPage: React.FC = () => {
         try {
             // Get form data
             const form = e.target as HTMLFormElement;
-            const formData = new FormData(form);
-
             // Submit form (replace with your API endpoint or form submission logic)
-            await form.submit();
+            form.submit();
 
             // Show success message
-            Swal.fire({
+            await Swal.fire({
                 title: "Success!",
                 text: "Your message has been sent successfully!",
                 icon: "success",
@@ -73,7 +71,8 @@ const ContactPage: React.FC = () => {
                 message: "",
             });
         } catch (error) {
-            Swal.fire({
+            console.log(error);
+            await Swal.fire({
                 title: "Error!",
                 text: "Something went wrong. Please try again later.",
                 icon: "error",
@@ -109,7 +108,7 @@ const ContactPage: React.FC = () => {
                     data-aos-duration="1100"
                     className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2"
                 >
-                    Got a question? Send us a message, and We'll get back to you soon.
+                    Got a question? Send us a message, and We&apos;ll get back to you soon.
                 </p>
             </div>
 
@@ -129,7 +128,7 @@ const ContactPage: React.FC = () => {
                                     Get in Touch
                                 </h2>
                                 <p className="text-gray-400">
-                                    Have something to discuss? Send us a message and let's talk.
+                                    Have something to discuss? Send us a message and let&apos;s talk.
                                 </p>
                             </div>
                             <Share2 className="w-10 h-10 text-[#6366f1] opacity-50" />

@@ -73,7 +73,7 @@ const Login: React.FC = () => {
             } else {
                 setError("Authentication error. Please try again.");
             }
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error("Request error:", error);
             if (axios.isAxiosError(error) && error.response) {
                 setError(error.response.data?.error || "An error occurred. Please try again later.");

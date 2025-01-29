@@ -1,24 +1,21 @@
 "use client";
 
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useMemo, useRef} from "react";
 
 const AnimatedBackground: React.FC = () => {
     const blobRefs = useRef<(HTMLDivElement | null)[]>([]);
-    const initialPositions = [
+    const initialPositions = useMemo(() => [
         { x: -4, y: 0 },
         { x: -4, y: 0 },
         { x: 20, y: -8 },
         { x: 20, y: -8 },
-    ];
+    ],[]);
 
     useEffect(() => {
-        let currentScroll = 0;
         let requestId: number;
 
         const handleScroll = () => {
             const newScroll = window.scrollY | window.scrollX;
-            const scrollDelta = newScroll - currentScroll;
-            currentScroll = newScroll;
 
             blobRefs.current.forEach((blob, index) => {
                 if (blob) {
@@ -43,7 +40,7 @@ const AnimatedBackground: React.FC = () => {
             window.removeEventListener("scroll", handleScroll);
             cancelAnimationFrame(requestId);
         };
-    }, []);
+    }, [initialPositions]);
 
     return (
         <div className="fixed inset-0">
