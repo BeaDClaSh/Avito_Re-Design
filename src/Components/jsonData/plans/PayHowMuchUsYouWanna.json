@@ -1,4 +1,8 @@
 {
   "Title": "Pay as Much as you wanna",
-  "Benefits": []
+  "Benefits": [
+    "Messages: 10/per day free, if you wanna more 1 cent/1 message","Remove all add for 5$/24h","Promote you ads 25$/1 ads/per week", "See a localization of another user 10$/user","Free ship from 50$"
+  ],
+  "Redirect": "/Buy/Plan/PayHowMuchYouWanna",
+  "Price": "0$ for Connect"
 }

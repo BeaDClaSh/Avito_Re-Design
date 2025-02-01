@@ -2,11 +2,8 @@
 
 import React from "react";
 import axios from "axios";
-import Menu from "@/Components/Menu"
 import LoginNextMessage from "@/Components/LoginPage/LoginNextMessage";
-import AnimatedBackground from "@/Components/AnimatedBackground";
 import Link from "next/link";
-import CopyRights from "@/Components/CopyRights";
 
 const shortcuts = {
     API_URL: "https://your-api-url.com", // Укажите свой API URL
@@ -87,8 +84,6 @@ const Login: React.FC = () => {
 
     return (
         <>
-            <AnimatedBackground/>
-            <Menu/>
             <div className="grid pt-16 gap-10 md:grid-cols-2 md:grid-rows-2 sm:grid-rows-3 sm:grid-cols-1 justify-center items-center">
                 {/* Сообщение/информация */}
                 <div className="md:pt-10">
@@ -178,7 +173,6 @@ const Login: React.FC = () => {
                     </form>
                 </div>
             </div>
-<CopyRights/>
         </>
     )
 }

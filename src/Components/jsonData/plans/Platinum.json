@@ -1,4 +1,6 @@
 {
   "Title": "Platinum Plan",
-  "Benefits": []
+  "Benefits": ["Unlimit SMS","See Geolocation of every user","promote how much you wanna","Free Delivery"],
+  "Redirect": "/Buy/Plan/Platinum",
+  "Price": "500$"
 }

@@ -2,8 +2,7 @@
 import {Label} from "@/Components/FiltersPage/ui/label";
 import MultipleSelector, {Option} from "@/Components/FiltersPage/ui/multiselect";
 import {useId} from "react";
-import AnimatedBackground from "@/Components/AnimatedBackground";
-import Menu from "@/Components/Menu"
+
 
 const shortcuts = {
     API_URL: "",
@@ -54,7 +53,7 @@ const ChooseWhatYouLookingFor: Option[] = [
     },
     {
         value: "eleventy",
-        label: "Eleventy",
+        label: "Eleventy (only for Platinum)",
         disable: true,
     },
     {
@@ -89,16 +88,12 @@ export default function Filter() {
 
     return (
         <>
-            <Menu/>
-        <AnimatedBackground/>
-            <div>
-
-            </div>
-            <div>
+            <div className="pt-16">
                 <form>
-        <div className="space-y-2 bg-black pt-5">
-            <Label>Multiselect</Label>
+        <div className="space-y-2">
+            <Label className=" pl-6 text-amber-50">Categories</Label>
             <MultipleSelector
+                className="bg-amber-50"
                 commandProps={{
                     label: "Select What Are You Looking For",
                 }}
