@@ -1,5 +1,6 @@
 "use client";
 import React, {useCallback, useEffect, useState} from "react";
+import Link from "next/link";
 
 const API_CONFIG = {
     BASE_URL: "https://jsonplaceholder.typicode.com",
@@ -7,7 +8,7 @@ const API_CONFIG = {
         POSTS: "/posts",
     },
     PAGINATION: {
-        LIMIT: 10, // Уменьшил для тестирования
+        LIMIT: 10,
     },
 };
 
@@ -69,11 +70,11 @@ const ForU: React.FC = () => {
 
     return (
         <>
-            <div className="pt-16">
-                <div className="text-gray-400 z-50">
+            <div className="pt-16 z-10">
+                <div className="text-gray-400">
                     <p className="pl-4 text-2xl">Recommendations:</p>
                 </div>
-                <div className="space-y-4">
+                <div className="space-y-4 z-50">
                     {posts.length > 0 ? (
                         posts.map((post) => (
                             <div
@@ -82,6 +83,14 @@ const ForU: React.FC = () => {
                             >
                                 <h2 className="text-xl font-bold">{post.title}</h2>
                                 <p className="text-gray-600">{post.body}</p>
+                                <div className="flex text-blue-700 justify-end">
+                                    <Link
+                                        href={`/Item/${post.id}`}
+                                        className="relative z-10"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        See details
+                                    </Link>                                </div>
                             </div>
                         ))
                     ) : (
@@ -93,11 +102,22 @@ const ForU: React.FC = () => {
                     <button
                         onClick={loadMorePosts}
                         disabled={isLoading}
-                        className={`mt-4 p-2 z-50 ${
-                            isLoading ? "bg-gray-400" : "bg-blue-500"
-                        } text-white rounded transition-colors duration-200`}
+                        className={`mt-4 p-2 px-6 ${
+                            isLoading
+                                ? "bg-gray-400 cursor-not-allowed"
+                                : "bg-blue-500 hover:bg-blue-600 active:bg-blue-700"
+                        } text-white rounded-lg transition-all duration-200 shadow-md ${
+                            !isLoading && "hover:shadow-lg"
+                        } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 relative z-20`}
                     >
-                        {isLoading ? "Загрузка..." : "Загрузить ещё"}
+                        {isLoading ? (
+                            <div className="flex items-center gap-2">
+                                <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"/>
+                                Загрузка...
+                            </div>
+                        ) : (
+                            "Загрузить ещё"
+                        )}
                     </button>
                 )}
 

@@ -23,7 +23,7 @@ const BuyProduct = () => {
         } catch (error) {
             console.error("Ошибка получения данных продукта:", error);
         }
-    }, [productId]);
+    }, [productId]);    
 
     useEffect(() => {
         if (productId) {

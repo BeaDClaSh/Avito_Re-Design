@@ -23,10 +23,10 @@ export default function RootLayout({
       <body
         className={`${geistSans} ${geistMono} antialiased`}
       >
-      <AnimatedBackground/>
       <Menu/>
         {children}
       <CopyRights/>
+      <AnimatedBackground/>
       </body>
     </html>
   );

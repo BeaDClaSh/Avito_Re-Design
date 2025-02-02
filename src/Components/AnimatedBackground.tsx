@@ -43,7 +43,7 @@ const AnimatedBackground: React.FC = () => {
     }, [initialPositions]);
 
     return (
-        <div className="fixed inset-0">
+        <div className="fixed inset-0 z-0 pointer-events: none">
             <div className="absolute inset-0">
                 <div
                     ref={(ref) => {

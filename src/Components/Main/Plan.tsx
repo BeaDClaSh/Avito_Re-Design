@@ -10,7 +10,10 @@ interface PlansProps {
 
 const Plans: React.FC<PlansProps> = ({ Title, benefits,redirect,Price }) => {
     return (
-        <form className="min-h-[50vh] rounded-xl bg-gradient-to-r from-blue-500 to-purple-400 border-gray-200 flex flex-col">
+        <form
+            data-aos="fade-up"
+            data-aos-duration="1100"
+            className="min-h-[50vh] rounded-xl bg-gradient-to-r from-blue-500 to-purple-400 border-gray-200 flex flex-col">
             <label className="p-3 text-2xl text-center">{Title}:</label>
             <ul className="flex-grow"> {/* Key change: Add flex-grow */}
                 {benefits.map((benefit, index) => (
